@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://u.widget.st/ar.js"></script>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[OLD] Marco's Page :D - Nekoweb</title>
+    <meta name="author" content="Marco">
+    <meta name="description" content="Welcome to Marco's Room!">
+    <link href="old2.css" rel="stylesheet" type="text/css" media="all">
+    
+    <script type="text/javascript">
+function tb8_makeArray(n){
+this.length = n;
+return this.length;
+}
+tb8_messages = new tb8_makeArray(3);
+tb8_messages[0] = "hi there";
+tb8_messages[1] = "follow pls";
+tb8_messages[2] = "[OLD] Marco's Room :D";
+tb8_rptType = 'infinite';
+tb8_rptNbr = 5;
+tb8_speed = 100;
+tb8_delay = 2000;
+var tb8_counter=1;
+var tb8_currMsg=0;
+var tb8_tekst ="";
+var tb8_i=0;
+var tb8_TID = null;
+function tb8_pisi(){
+tb8_tekst = tb8_tekst + tb8_messages[tb8_currMsg].substring(tb8_i, tb8_i+1);
+document.title = tb8_tekst;
+tb8_sp=tb8_speed;
+tb8_i++;
+if (tb8_i==tb8_messages[tb8_currMsg].length){
+tb8_currMsg++; tb8_i=0; tb8_tekst="";tb8_sp=tb8_delay;
+}
+if (tb8_currMsg == tb8_messages.length){
+if ((tb8_rptType == 'finite') && (tb8_counter==tb8_rptNbr)){
+clearTimeout(tb8_TID);
+return;
+}
+tb8_counter++;
+tb8_currMsg = 0;
+}
+tb8_TID = setTimeout("tb8_pisi()", tb8_sp);
+}
+tb8_pisi()
+</script>
+
+    <!-- Facebook / Open Graph Preview Image -->
+    <meta property="og:description" content="Hi, I'm Marco! I make random stuff on the internet.&#10;Check out my website here!">
+    <meta property="og:image" content="https://marcoisbored.nekoweb.org/assets/images/siteboxes/Halloween%20Version.png">
+    <meta property="og:url" content="https://marcoisbored.nekoweb.org">
+    <meta property="og:type" content="website">
+
+    <!-- X (formerly Twitter) Preview Image -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Marco's Room - Nekoweb">
+    <meta name="twitter:description" content="Hi, I'm Marco! I make random stuff on the internet.&#10;Check out my website here!">ot
+    <meta name="twitter:image" content="https://marcoisbored.nekoweb.org/assets/images/siteboxes/Halloween%20Version.png">
+
+</head>
+<body>
+
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-header">📢 Notification</h3>
+            
+            <div class="modal-body">
+                <h2>Hello there!</h2>
+                <h3>Welcome to my site!<br>
+                    Enjoy your stay!</h3>
+                <h5><em>Please note that this site is a work in progress.<br><a href="https://www.google.com/search?q=how+to+do+a+hard+refresh">Hard refresh the page</a> (ctrl+shift+r) to view the newest updated versions.</em></h5>
+                <img src="https://cyber.dabamos.de/88x31/bestviewedcomp.gif" style="margin-top: 10px;">
+                <a href="https://brainmade.org"><img src="/assets/images/brainmade_light.png" alt="brainmade logo"></a>
+            <br><a href="https://www.mabsland.com/Adoption.html"><img src="https://www.mabsland.com/Pandas/Censor_Gc.gif" alt="webrating" title="This website has been given a G rating by the owner.&#10;Click for more info."></a><br><br>
+                <button class="modal-button" onclick="closeModal()">Enter Site</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1 id="">Marco's Room</h1>
+    </header>
+    <div id="content">
+        <div id="sidebar">
+            <div id="avatar">
+                <img src="/assets/images/Miauuu-OC.png" alt="my icon!">
+            </div>
+            <div id="bio">
+                <p>Hello,︎ I'm Marco.<br>I'm an aspiring graphic designer.<br><br>Name: Marco<br>Age: Yes<br>Gender: Male ♂<br>Pronouns: He/Him</p>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <div class="button-collection"><a href="https://en.pronouns.page/he" target="_blank"><img src="https://qalle.neocities.org/88x31/pronoun-cga-he-him.png" alt="pronounbutton"></a></div>
+                    <small>&nbsp;</small>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://scratch.mit.edu/users/MarcoIsBored">Scratch</a></li>
+                    <li><a href="https://open.spotify.com/user/31qmc2qvoqwwxqkwzg3n3utkkqwu?si=601b994f5ea34ee6">Spotify</a></li>
+                    <li><a href="https://www.bandlab.com/marcoisbored">BandLab</a></li>
+                    <li><a href="https://marcoisbored.bearblog.dev">Blog</a></li>
+                    <li><a href="https://marcoisbored.atabook.org">Guestbook</a></li>
+                </ul>
+                <br>
+                <div style="padding:15px; text-align:center; max-width:100%; overflow-x:auto;">
+                <button id="cpBtn" style="padding:10px;font-weight:bold;cursor:pointer;border-radius:5px;border:1px solid #ccc;background:#f0f0f0;color:#333;margin-bottom:15px;">copy my button code!</button><br>
+                <a href="https://marcoisbored.nekoweb.org/" target="_blank" class="site-button"><img src="https://marcoisbored.nekoweb.org/site-button.gif" alt="Marco's Site!" title="CLICK IT. NOW."></a>
+                
+				<h2>Check out these websites:</h2>
+				<small>powered by NavLink + SideLink</small>
+				<h3>-----------------------</h3>
+				<iframe width="180" height="180" style="border:none" src="https://nvlk.dimden.dev/" name="neolink"></iframe>
+				<iframe width="150" height="450" style="border:none" src="https://dogspit.nekoweb.org/sidelink.html" name="sidelink"></iframe>
+            </nav>
+        </div>
+        
+        <main>
+            <h1>welcome to my site!</h1>
+            <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>
+            <div class="button-collection">
+                <img src="https://i.imgur.com/1dEdQoa.gif" style="margin-top: 10px;" title="Share this site with your friends! ;D">
+                <img src="https://moule.world/media/images/88x31/Visualiser.GIF" style="margin-top: 10px;">
+            </div>
+            <br>
+            <ws-widget type="webring" iid="3506"></ws-widget>
+            <ws-widget type="hc" iid="4712"></ws-widget>
+            
+            <h4>Hello!</h4>
+            <p>My name's Marco. Welcome to my page.<br><strong>Here's some things bout me:</strong></p>
+            <ul>
+                <li>I'm cool</li>
+                <li>I have <a href="https://www.wigoogle.com/search?q=pittakionophobia&rlz=1C1CHBF_enAU1097AU1097&oq=Pittakionophobia&gs_lcrp=EgZjaHJvbWUqDwgAEAAYQxjjAhiABBiKBTIPCAAQABhDGOMCGIAEGIoFMgwIARAuGEMYgAQYigUyDAgCEAAYQxiABBiKBTINCAMQABiRAhiABBiKBTIMCAQQABhDGIAEGIoFMgYIBRAAGB4yBggGEAAYHjIGCAcQABgeMgYICBAAGB4yCAgJEAAYBRge0gEHNTM1ajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" title="Pittakionophobia is the phobia/aversion to small stickers.">pittakionophobia</a></li>
+                <li>I live in Australia btw</li>
+            </ul>
+            
+            <p><strong>Here are some things I like:</strong></p>
+            <ul>
+                <li>Art/Graphic design</li>
+                <li>Murder Drones</li>
+                <li>Minecraft</li>
+                <li><a href="#portal">Portal</a></li>
+                <li>Vocaloid/SynthV</li>
+                <li>IKEA</li>
+                <li><a href="https://en.wikipedia.org/wiki/BYD_Auto">BYD's</a></li>
+            </ul>
+            
+            <hr style="border: 1px dashed #ccc; margin: 40px 0 20px 0;">
+            <p><strong>Here you can see:</strong></p>
+            <ul>
+                <li>Random Things </li>
+                <li>Daily posts</li>
+                <li>what im doing rn</li>
+                <li>Other silly stuff :P</li>
+                <li>...and more!</li>
+            </ul>
+            
+            <h2 id="status">Status Thingies</h2>
+            <ws-widget type="status" iid="11390"></ws-widget>
+            
+            <h4>My Local Time:</h4>
+            <iframe src="https://free.timeanddate.com/clock/iad9gtwh/n47/tlau/tcf90/pc9f0/ftbi/bat5/tt0/tw1/tm1/td1/th2" frameborder="0" width="237" height="20"></iframe>
+            <br>
+            <h4>Discord Status:</h4>
+            <img src="https://api.statusbadges.me/badge/status/905426876208660540?style=flat-square" alt="status">
+            <a href="https://api.statusbadges.me/openspotify/905426876208660540" target="_blank" rel="noopener"><img src="https://api.statusbadges.me/badge/spotify/905426876208660540?style=flat-square" alt="spotify"></a>
+            <p>🔼 Click to listen! 🔼</p>
+            
+            <hr style="border: 1px dashed #ccc; margin: 40px 0 20px 0;">
+            <ws-widget type="polls" iid="17497"></ws-widget>
+            
+            <h2>Blinkies + Stamps :3</h2>
+            
+            <h4>Kicya Buttons</h4>
+            <div class="button-collection">
+                <a href="https://nekoweb.org/" target="_blank"><img src="https://nekoweb.org/assets/buttons/button6.gif" alt="Nekoweb"></a>
+                <a href="https://atabook.org/" target="_blank"><img src="https://atabook.org/images/button.gif" alt="atabook"></a>
+                <a href="https://widget.st"><img src="https://widget.st/images/button.gif"></a>
+            </div>
+            <hr>
+                
+            <h4> Cool ppl</h4>
+            <div class="button-collection">
+                <a href="https://lorenzo.nya.je" target="_blank"><img src="https://lorenzo.nya.je/button.gif" alt="eat me"></a>
+                <a href="https://ultrakill.nekoweb.org" target="_blank" rel="noopener noreferrer"><img src="https://ultrakill.nekoweb.org/AUTISM.png" alt="Autism Button" style="width: 88px; height: 31px; border: 0;"></a>
+                <a href="https://flynnisbored.nekoweb.org"><img src="https://flynnisbored.nekoweb.org/sitebutton.gif" alt="WebPG" height="31" width="88"></a>
+                <a href="https://ellen.nekoweb.org" target="_blank"><img src="https://ellen.nekoweb.org/Images/oc%20headshot%20style.png" alt="ellenthekat" title="oOoOoOo, you wanna click on this don't ya?"></a>
+                <a href="https://nomnomnami.com/" target="_blank"><img src="https://nomnomnami.com/images/site_button.gif" alt="nomnomnami"></a>
+                <a href="https://petrapixel.neocities.org/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/petracoding/petrapixel.neocities.org@latest/public/assets/img/linkback.gif" alt="petrapixel"></a>
+                <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>
+            </div>
+            <hr>
+                
+            <h4>Other</h4>
+            <div class="button-collection">
+           <a href="https://www.google.com/search?q=australia/" target="_blank"><img src="/assets/images/Au_button.png" alt="au-flag" title="Australians all let us rejoice&#10;For we are young and free&#10;We've golden soil and wealth for toil&#10;Our home is girt by sea&#10;Our land abounds in nature's gifts&#10;Of beauty, rich and rare&#10;In history's page let every stage&#10;Advance Australia fair&#10;&#10;In joyful strains then let us sing&#10;Advance Australia fair" width="88" height="31"></a>
+            <a href="https://animalcrossing.nintendo.com/" target="_blank"><img src="https://moule.world/media/images/88x31/AnimalCrossing.gif" alt="AnimalCrossing"></a>
+            <a href="https://yesterweb.org/no-to-web3/" target="_blank"><img src="https://auzziejay.com/images/noweb32.gif" alt="saynotoweb3"></a>
+            <a href="https://supermarioplay.com/" target="_blank"><img src="https://moule.world/media/images/88x31/SuperMarioBros.GIF" alt="Super Chris Pratt Bros."></a>
+            <a href="https://www.ikea.com/fi/en/p/blahaj-soft-toy-shark-30373588/" target="_blank"><img src="https://qalle.neocities.org/88x31/pride-blahaj.png" alt="IKEA Blåhaj" title="Buy an IKEA Blåhaj&#10;...please?"></a>
+            </div>
+            <hr>
+                
+            <h4>Fanlistings/Stamps :3</h4>                
+            <div class="button-collection">
+                <img src="https://sleepycircus.neocities.org/images/fanlistings/blahaj.png">
+                <img src="https://lorenzo.nya.je/images/tvroom_fanlisting.png">
+            </div>
+            
+            <br>
+            <hr style="border: 2px solid #b1baf2; margin: 20px auto 40px auto; width: 100%;">
+            
+            <h6>&nbsp;</h6>
+            <div class="credits">
+                <h2>credits</h2>
+                <h4>template by <a href="https://nomnomnami.com">NomnomNami</a>!</h4>
+                <h4>cool banner made by <a href="https://lorenzo.nya.je/">lorenzo!</a></h4>
+                <h4>TVRoom Fanlisting image also by <a href="https://lorenzo.nya.je/">lorenzo!</a></h4>
+                <p>im learning html by using little website called <a href="https://coddy.tech" target="_blank"><strong>Coddy</strong></a> and looking up stuff i didn't know... you can learn too!!! good luck!!!!!!</p>
+                <br>
+                <h4 style="margin: 1px auto 1px auto;">Rated</h4>
+                <a href="https://www.mabsland.com/Adoption.html"><img src="https://www.mabsland.com/Pandas/Censor_Ga.gif" alt="webrating" title="This website has been given a G rating by the owner.&#10;Click for more info."></a>
+                <div class="center">
+                    <p><a href="#">Go to top</a></p>
+                    <small>last updated: 21/08/2026 (Date format: DD/MM/YYYY)</small>
+                </div>
+            </div>
+        </main>
+    </div> <!-- Closes #content wrapper properly here -->
+
+    <!-- ✅ Portal section is now completely below #content and full-width -->
+    <div class="center" id="portal" style="margin: 40px 0;">
+        <img src="https://static.wikia.nocookie.net/half-life/images/4/46/Wheatley_model_p2.png/revision/latest?cb=20240222050254&path-prefix=en" title="I&#10;AM NOT&#10;A&#10;MORON" width="210"><img src="https://i1.theportalwiki.net/img/thumb/7/79/GLaDOS_P2.png/602px-GLaDOS_P2.png" height="300" title="YES YOU ARE!&#10;YOU'RE THE MORON THEY BUILT TO MAKE ME AN IDIOT!">
+        <br><img src="https://static.wikia.nocookie.net/half-life/images/9/93/Crap_turret.jpg/revision/latest?cb=20110516161126&path-prefix=en" height="200" title="*clickclickclick*&#10;Uh-&#10;BLAMBLAMBLAMBLAM! I'm not defective!"><img src="https://static.wikia.nocookie.net/half-life/images/3/3c/Space_Core_p2.png/revision/latest/scale-to-width-down/536?cb=20240222050901&path-prefix=en" height="200" title="spacespacegottagotospacespacespace&#10;SPAAAAAAAAAAAAAAACE!&#10;Wanna see me? Better buy a telescope.">
+    </div>
+
+    <footer>© 2026 MarcoIsBored</footer>
+    
+    <!-- Scripts -->
+    <div>
+        <script>
+        document.getElementById('cpBtn').addEventListener('click',function(){
+            const b=this,txt='<a href="https://marcoisbored.nekoweb.org/" target="_blank"><img src="https://marcoisbored.nekoweb.org/site-button.gif" alt="Marco\'s Site!" title="CLICK IT. NOW."></a>';
+            navigator.clipboard.writeText(txt).then(()=>{b.innerText='copied!';b.style.background='#8eff8e';setTimeout(()=>{b.innerText='copy my button code!';b.style.background='#f0f0f0'},2000)}).catch(()=>alert('Copy failed!'));
+        });
+        </script>
+        <script>
+            function closeModal() {
+                document.getElementById('welcomeModal').style.display = 'none';
+            }
+        </script>
+    </div>
+</body>
+</html>

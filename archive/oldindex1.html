@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script id="chatBroEmbedCode">/* Chatbro Widget Embed Code Start */function ChatbroLoader(chats,async){async=!1!==async;var params={embedChatsParameters:chats instanceof Array?chats:[chats],lang:navigator.language||navigator.userLanguage,needLoadCode:'undefined'==typeof Chatbro,embedParamsVersion:localStorage.embedParamsVersion,chatbroScriptVersion:localStorage.chatbroScriptVersion},xhr=new XMLHttpRequest;xhr.withCredentials=!0,xhr.onload=function(){eval(xhr.responseText)},xhr.onerror=function(){console.error('Chatbro loading error')},xhr.open('GET','https://www.chatbro.com/embed.js?'+btoa(unescape(encodeURIComponent(JSON.stringify(params)))),async),xhr.send()}/* Chatbro Widget Embed Code End */ChatbroLoader({encodedChatId: '39AuG'});</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[OLD] Marco's Page! :D</title>
+    
+    <link href="https://fonts.cdnfonts.com/css/fortyseven-micro-nbp" rel="stylesheet">
+
+<style>
+    /* --- POPUP STYLING --- */
+    .modal-overlay {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 0;
+        border: 2px solid #363538;
+        width: 300px;
+        box-shadow: 8px 8px 0px #d883fc;
+        text-align: center;
+        font-family: 'FortySeven Micro NBP', sans-serif;
+    }
+
+    .modal-header {
+        background-color: #d883fc;
+        color: white;
+        padding: 5px;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-button {
+        background-color: #aadcf0;
+        border: 2px solid #363538;
+        padding: 5px 15px;
+        font-family: 'FortySeven Micro NBP', sans-serif;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .modal-button:hover {
+        background-color: #d883fc;
+        color: white;
+    }
+
+    /* --- ORIGINAL STYLING --- */
+    body{
+        background-color: #aadcf0;
+        background-image: url('');
+        color: #363538;
+        font-family: 'FortySeven Micro NBP', sans-serif; 
+    }
+
+    #all{
+        background-color: #ccc;
+        width: 615px;
+        margin: 0 auto;
+    }
+
+    #side{
+        background-color: #fff;
+        float: left;
+        width: 175px;
+        position: fixed;
+    }
+
+    #sidepadding{
+        padding: 10px;
+    }
+
+    .sideimgholder{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1.0; 
+    }
+
+    #sideimg{
+        width: 175px;
+    }
+
+    #nav{
+        font-size: 14px;
+        padding: 5px 0px 5px 0px;
+    }
+
+    ul {
+        margin: 10px 0 0 0;
+        padding: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        list-style-type: none;
+    }
+
+    li {
+        width: auto;
+        display: block;
+        font-size: 13px;
+    }
+
+    #sidecontent{
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    .divider{
+        border-top: 1px dotted #7A787D;
+    }
+
+    #main{
+        background-color: #fff;
+        float: right;
+        width: 425px;
+    }
+
+    .subheaders{
+        margin: 0px;
+        font-weight: normal;
+        letter-spacing: 2px;
+        font-size: 20px;
+        line-height: 13px;
+        color: #fff;
+        background-color: #d883fc;
+    }
+
+    .maincontent{
+        padding: 0px 15px 15px 15px;
+        text-align: justify;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+
+    /* UPDATED: Shrink-wrap container */
+    .button-share-container {
+        display: inline-flex; 
+        align-items: center;
+        gap: 10px;
+        background: #f1f1f1;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+    }
+
+    a{
+        text-decoration: none;
+        color: #BA7F61;
+    }
+
+    a:visited{
+        color: #BA7F61;
+    }
+
+    a:hover{
+        font-style: italic;
+    }
+
+    a:active{
+        font-weight: bold;
+    }
+
+    ::-webkit-scrollbar{
+        width: 8px; 
+    }
+    
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background-color: #7A787D;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- POPUP HTML -->
+<div id="welcomeModal" class="modal-overlay">
+    <div class="modal-content">
+        <h3 class="modal-header">Notification</h3>
+        <div class="modal-body">
+            <p>Welcome to my page!</p>
+            <p>Check it out!</p>
+            <button class="modal-button" onclick="closeModal()">Enter Site</button>
+            <br><br><img src="https://i.imgur.com/1dEdQoa.gif" style="margin-top: 10px;" title="Share this site with your friends! ;D">
+        </div>
+    </div>
+</div>
+
+<div id="all">
+
+<div id="side">
+    <h2 class="subheaders" style="padding: 5px 10px;">me</h2>
+
+    <div id="sidepadding">
+        <div class="sideimgholder">
+            <img id="sideimg" src="/assets/images/Miauuu-OC.png">
+        </div>
+
+        <div id="nav"></div>
+
+        <div id="sidecontent" style="text-align: center;">
+            <h3 style="margin-top:5px;">About Me:</h3>
+            <p>Name: Marco</p>
+            <p>Gender: Male</p>
+            <p>Age: Yes</p>
+            <p> Status: Sane?</p>
+            <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="130" height="20"></iframe>
+            
+            <div class="divider" style="margin-top:10px;"></div>
+
+            <h3 style="margin-top: 10px; margin-bottom: 5px;">Links</h3>
+            <ul>
+                <li><a href="https://scratch.mit.edu/users/MarcoIsBored/">Scratch</a></li>
+                <li><a href="">-</a></li>
+                <li><a href="">-</a></li>
+                <li><a href="">-</a></li>
+                <li style="grid-column: span 2;"><a href='https://marcoisbored.atabook.org/'>Sign My Guestbook!</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div id="main">
+    <h2 class="subheaders" style="padding: 5px 10px;">× ▫ -</h2>
+
+    <div class="maincontent">
+        <p>Hai, I'm Marco.</p>
+        <p>I make cool things on the internet.</p>
+        
+        <p><strong>You can check back on my site to see:</strong></p>
+        <p>- daily inspirational stuff (unless i forget to update)</p>
+        <p>- what im doing rn</p>
+        <p>- random silly stuff</p>
+        <br>
+        <p>Anyways... while you're here, you should add my button to your site:</p>
+        
+        <!-- Button Share Section -->
+        <div class="button-share-container">
+            <button id="copyButton" style="padding: 6px 10px; font-weight: bold; cursor: pointer; border-radius: 5px; border: 1px solid #363538; background-color: #aadcf0; font-family: 'FortySeven Micro NBP', sans-serif; font-size: 12px;">
+                copy button code!
+            </button>
+            <a href="https://marcoisbored.nekoweb.org/" target="_blank">
+                <img src="https://marcoisbored.nekoweb.org/site-button.gif" alt="Marco's Site!" title="CLICK IT. NOW." style="display:block;">
+            </a>
+        </div>
+
+        <script>
+          document.getElementById('copyButton').addEventListener('click', function() {
+            const htmlCode = '<a href="https://marcoisbored.nekoweb.org/" target="_blank"><img src="https://marcoisbored.nekoweb.org/site-button.gif" alt="Marco\'s Site!"></a>';
+            
+            navigator.clipboard.writeText(htmlCode).then(() => {
+              const btn = this;
+              btn.innerText = 'copied!';
+              btn.style.backgroundColor = '#d883fc';
+              btn.style.color = 'white';
+              
+              setTimeout(() => {
+                btn.innerText = 'copy button code!';
+                btn.style.backgroundColor = '#aadcf0';
+                btn.style.color = '#363538';
+              }, 2000);
+            }).catch(err => {
+              console.error('failed to copy :( ', err);
+            });
+          });
+        </script>
+        
+        <hr style="margin-top:20px;">
+        <h3>Today's post:</h3>
+        <p><a href="https://www.youtube.com/playlist?list=PLHovnlOusNLiJz3sm0d5i2Evwa2LDLdrg"><strong>Murder Drones</strong></a> is <strong>EPIK</strong></p>
+        <img src="https://marcoisbored.nekoweb.org/assets/images/RON.jpg" style="width:100%; max-width:300px;">
+        <p>-------------------------------------------------</p>
+        <h3>Check out my cousin's TikTok</h3>
+        <p><a href="https://www.tiktok.com/@revvydude">@karl_hotdog</a></p>
+
+        <p>-------------------------------------------------</p> 
+        <img src="https://media.tenor.com/2roX3uxz_68AAAAM/cat-space.gif" width="150">
+        <br>
+        <img src="https://api.statusbadges.me/badge/status/905426876208660540?simple=true" alt="status">
+        <a href="https://api.statusbadges.me/openspotify/905426876208660540" target="_blank" rel="noopener"><img src="https://api.statusbadges.me/badge/spotify/905426876208660540" alt="spotify"></a>
+        <p><strong>My local time is:</strong></p>
+        <iframe src="https://free.timeanddate.com/clock/iad9gtwh/n47/tlau/tcf90/pc9f0/ftbi/bat5/tt0/tw1/tm1/td1/th2" frameborder="0" width="237" height="20"></iframe>
+        
+        <h3>BUTTONS!!!</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+            <a href="https://nekoweb.org/"><img src="https://nekoweb.org/assets/buttons/button6.gif"></a><!-- button by s1nez.nekoweb.org -->
+            <a href="https://marcoisbored.atabook.org/" target='_blank'><img src=https://atabook.org/images/button.gif alt="atabook"></a>
+            <a href="https://lorenzolikesstuff.nekoweb.org" target="_blank"><img src="https://lorenzolikesstuff.nekoweb.org/button.gif" alt="eat me"></a>
+            <a href="https://ellen.nekoweb.org" target="_blank"><img src="https://ellen.nekoweb.org/Images/oc%20headshot%20style.png" alt="ellenthekat" title="oOoOoOo, you wanna click on this don't ya?"></a>
+            <a href="https://nomnomnami.com/" target="_blank"><img src="https://nomnomnami.com/images/site_button.gif" alt="nomnomnami"></a>
+        </div>
+
+        <hr>
+        <h1>Credits</h1>
+        Template by <a href="https://repth.neocities.org/index.html">repth</a>
+    </div>
+</div>
+
+</div>
+
+<script>
+    function closeModal() {
+        document.getElementById("welcomeModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById("welcomeModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

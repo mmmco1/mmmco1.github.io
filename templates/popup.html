@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>marcoisbored</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        /* --- POPUP STYLING --- */
+        .modal-overlay {
+            display: flex;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 0;
+            border: 2px solid #363538;
+            width: 300px;
+            box-shadow: 8px 8px 0px #d883fc;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        .modal-header {
+            background-color: #d883fc;
+            color: white;
+            padding: 5px;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-button {
+            background-color: #aadcf0;
+            border: 2px solid #363538;
+            padding: 5px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+
+        .modal-button:hover {
+            background-color: #d883fc;
+            color: white;
+        }
+
+        a {
+            color: #d883fc;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- POPUP HTML -->
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 class="modal-header">Notification</h3>
+            <div class="modal-body">
+                <h2 style="margin-top: 0;">Hello there!</h2>
+                <h3 style="font-weight: normal;">
+                    This site is currently under construction.<br><br>
+                    Click <a href="https://marcoisbored.nekoweb.org/blank.html">here</a> to see the last version.
+                </h3>
+                <!-- Added a button to close the popup -->
+                <button class="modal-button" onclick="closeModal()">Enter Site</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT (Just an example) -->
+    <div style="padding: 20px;">
+        <h1>Welcome to my actual page content</h1>
+        <p>This is hidden behind the popup until "Enter Site" is clicked.</p>
+    </div>
+
+    <script>
+        // This function hides the modal when the button is clicked
+        function closeModal() {
+            document.getElementById('welcomeModal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

@@ -115,10 +115,10 @@ tb8_pisi()
         </div>
         
         <div class="sidebar-section">
-          <div class="sidebar-title">Section Title</div>
+          <div class="sidebar-title">Why is it on fire?</div>
           <blockquote>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p>Necessit atibus perferendis inventore tempore vel optio similique blanditiis quasi quam?</p>
+            <p>As you (probably) know, I live in Australia.<br>And as you (probably) know, in Australia, the summer weather is practically the same as Arizona, reaching highs of 40°C (104°F
+            ).</p><p>it is Christmas time soon, which means while you are frolicking in the snow, I am trying to survive and not turn into a melted popsicle from the sun.
           </blockquote>
         </div>
         
@@ -228,10 +228,9 @@ tb8_pisi()
         
         <div class="sidebar-section">
           <div class="sidebar-title"><abbr title="sites advertised here may contain explicit content&#10;View with caution.">⚠️ Check out these websites:</abbr></div>
-		  <small>powered by NavLink + SideLink</small>
+		  <small>powered by NavLink</small>
 		  <h3>-----------------------</h3>
 		  	<iframe width="180" height="180" style="border:none" src="https://nvlk.dimden.dev/" name="neolink"></iframe>
-		  	<iframe width="150" height="450" style="border:none" src="https://dogspit.nekoweb.org/sidelink.html" name="sidelink"></iframe>
 		  </div>
         
       </aside>
@@ -249,10 +248,7 @@ tb8_pisi()
         <section>
 
           <h1>welcome to my site!</h1>
-            <iframe src="https://nekoweb.org/frame/follow" frameborder="0" width="170" height="28"></iframe>
-
-                <img src="https://i.imgur.com/1dEdQoa.gif" style="margin-top: 10px;" height="31" title="Share this site with your friends! :3">
-                <img src="https://moule.world/media/images/88x31/Visualiser.GIF" style="margin-top: 10px;">
+            <h4><a href="https://nekoweb.org/follow/marcoisbored.nekoweb.org" title="User must have a nekoweb account to follow."><em>[follow on nekoweb]</em></h4>
 
             <br>
             <div class="alignr">
@@ -362,5 +358,271 @@ tb8_pisi()
 
 
     <!-- Add any additional Javascript code (<script></script>) here. -->
+     <div id="fire">
+     <style>
+  /* Smooth color transitions for text and buttons */
+  h1, h2, h3, strong, button:not(#fire-toggle-btn) {
+    transition: color 0.8s ease, text-shadow 0.8s ease, box-shadow 0.8s ease, border-color 0.8s ease;
+  }
+
+  /* Fiery styles only apply when 'burning-mode' is active on <html> */
+  html.burning-mode h1,
+  html.burning-mode h2,
+  html.burning-mode h3,
+  html.burning-mode strong {
+    color: #fff8e7 !important;
+    text-shadow:
+      0 0 4px #ffae00,
+      0 -3px 8px #ff5500,
+      0 -7px 15px #d40000 !important;
+  }
+
+  html.burning-mode button:not(#fire-toggle-btn) {
+    background: linear-gradient(180deg, #ffdd55 0%, #ff6600 55%, #b30000 100%) !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border-color: #ffaa00 !important;
+    box-shadow: 0 0 10px rgba(255, 85, 0, 0.7) !important;
+    text-shadow: 0 1px 2px #660000 !important;
+  }
+
+  html.burning-mode button:not(#fire-toggle-btn):hover {
+    box-shadow: 0 0 18px #ffaa00, 0 0 28px #ff3300 !important;
+  }
+</style>
+
+<script>
+(function() {
+  // Remove any leftover fire canvases from earlier snippets
+  document.querySelectorAll('#fire-canvas, .fire-overlay-canvas').forEach(el => el.remove());
+
+  let isBurning = true;
+  let isExtinguishing = false;
+  let tintAlpha = 0.14;
+  let animId = null;
+
+  document.documentElement.classList.add('burning-mode');
+
+  // 1. Create the layout-safe fire canvas
+  const canvas = document.createElement('canvas');
+  canvas.className = 'fire-overlay-canvas';
+  canvas.style.cssText = `
+    all: initial !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 2147483646 !important;
+  `;
+  document.documentElement.appendChild(canvas);
+
+  // 2. Create the layout-safe toggle button in the top-right corner
+  const toggleBtn = document.createElement('button');
+  toggleBtn.id = 'fire-toggle-btn';
+  toggleBtn.textContent = '🔥 Hide Fire';
+  toggleBtn.style.cssText = `
+    all: initial !important;
+    position: fixed !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 2147483647 !important;
+    padding: 6px 12px !important;
+    font-family: sans-serif !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    color: #ffffff !important;
+    background: rgba(30, 10, 5, 0.85) !important;
+    border: 1px solid #ff8800 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    cursor: pointer !important;
+  `;
+  document.documentElement.appendChild(toggleBtn);
+
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const particles = [];
+  const smokePuffs = [];
+
+  class FireParticle {
+    constructor(isEmber = false) {
+      this.isEmber = isEmber;
+      this.active = true;
+      this.reset();
+    }
+
+    reset() {
+      // Stop respawning new flames once extinguishing starts
+      if (!isBurning) {
+        this.active = false;
+        return;
+      }
+      this.active = true;
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + (this.isEmber ? 5 : 20);
+      this.size = this.isEmber ? Math.random() * 3.5 + 1.5 : Math.random() * 45 + 25;
+      this.speedY = this.isEmber ? Math.random() * 3 + 1.5 : Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * (this.isEmber ? 2.5 : 1);
+      this.life = 1;
+      this.decay = this.isEmber ? Math.random() * 0.008 + 0.004 : Math.random() * 0.015 + 0.009;
+    }
+
+    update() {
+      if (!this.active) return;
+
+      this.y -= this.speedY;
+      this.x += this.speedX + Math.sin(this.y * 0.03) * 0.6;
+      // Burn out slightly faster during extinguish so the transition feels crisp
+      this.life -= isExtinguishing ? this.decay * 1.6 : this.decay;
+      if (!this.isEmber) this.size *= 0.985;
+
+      if (this.life <= 0 || this.size <= 1 || this.y < -20) {
+        this.reset();
+      }
+    }
+
+    draw() {
+      if (!this.active || this.life <= 0) return;
+
+      const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+
+      if (this.isEmber) {
+        grad.addColorStop(0, `rgba(255, 245, 160, ${this.life})`);
+        grad.addColorStop(0.5, `rgba(255, 100, 0, ${this.life * 0.8})`);
+        grad.addColorStop(1, 'rgba(255, 0, 0, 0)');
+      } else {
+        grad.addColorStop(0, `rgba(255, 210, 50, ${this.life * 0.6})`);
+        grad.addColorStop(0.45, `rgba(255, 75, 0, ${this.life * 0.45})`);
+        grad.addColorStop(1, 'rgba(180, 0, 0, 0)');
+      }
+
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  class SmokePuff {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height - Math.random() * 60;
+      this.size = Math.random() * 45 + 30;
+      this.speedY = Math.random() * 1.6 + 0.8;
+      this.speedX = (Math.random() - 0.5) * 1.2;
+      this.life = Math.random() * 0.35 + 0.25;
+      this.decay = Math.random() * 0.005 + 0.003;
+    }
+
+    update() {
+      this.y -= this.speedY;
+      this.x += this.speedX + Math.sin(this.y * 0.02) * 0.5;
+      this.size *= 1.006; // Smoke expands softly as it rises
+      this.life -= this.decay;
+    }
+
+    draw() {
+      if (this.life <= 0) return;
+      const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
+      grad.addColorStop(0, `rgba(210, 200, 215, ${this.life})`);
+      grad.addColorStop(1, 'rgba(180, 170, 185, 0)');
+
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 120; i++) particles.push(new FireParticle(false));
+  for (let i = 0; i < 70; i++) particles.push(new FireParticle(true));
+
+  function spawnSmoke() {
+    smokePuffs.length = 0;
+    for (let i = 0; i < 35; i++) {
+      smokePuffs.push(new SmokePuff());
+    }
+  }
+
+  function loop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Smoothly fade the orange tint in or out
+    if (isBurning && tintAlpha < 0.14) {
+      tintAlpha = Math.min(0.14, tintAlpha + 0.006);
+    } else if (!isBurning && tintAlpha > 0) {
+      tintAlpha = Math.max(0, tintAlpha - 0.004);
+    }
+
+    if (tintAlpha > 0) {
+      ctx.fillStyle = `rgba(255, 95, 0, ${tintAlpha})`;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    let anyActiveFire = false;
+    for (const p of particles) {
+      p.update();
+      p.draw();
+      if (p.active) anyActiveFire = true;
+    }
+
+    let anyActiveSmoke = false;
+    for (const s of smokePuffs) {
+      s.update();
+      s.draw();
+      if (s.life > 0) anyActiveSmoke = true;
+    }
+
+    // Once all flames, smoke, and tint have faded away, pause the loop cleanly
+    if (!isBurning && !anyActiveFire && !anyActiveSmoke && tintAlpha <= 0) {
+      isExtinguishing = false;
+      canvas.style.setProperty('display', 'none', 'important');
+      return;
+    }
+
+    animId = requestAnimationFrame(loop);
+  }
+
+  // Toggle with soft extinguishing or re-ignition
+  toggleBtn.addEventListener('click', function() {
+    isBurning = !isBurning;
+
+    if (isBurning) {
+      isExtinguishing = false;
+      smokePuffs.length = 0;
+      document.documentElement.classList.add('burning-mode');
+      canvas.style.setProperty('display', 'block', 'important');
+      toggleBtn.textContent = '🔥 Hide Fire';
+
+      // Re-ignite all particles smoothly
+      for (const p of particles) {
+        p.reset();
+        p.y = canvas.height + Math.random() * 80;
+      }
+
+      cancelAnimationFrame(animId);
+      loop();
+    } else {
+      isExtinguishing = true;
+      document.documentElement.classList.remove('burning-mode');
+      toggleBtn.textContent = '🔥 Show Fire';
+      spawnSmoke();
+    }
+  });
+
+  loop();
+})();
+</script>
+</div>
+
   </body>
 </html>
